@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import './App.css';
+import Panel from './components/Panel';
+import Menu from './components/Menu';
+import List from './components/List';
+import Memo from './components/Memo';
+import Editor from './components/Editor';
+import Preview from './components/Preview';
 
 function App() {
 
@@ -25,33 +31,21 @@ function App() {
 
     return (
         <div className="App container">
-            <div className='panel'>
-                <div className='menu'>
-                    <input className='search' placeholder='Search'/>
-                    <button className='btn' onClick={(e) => handleClick()}>New Memo</button>
-                </div>
-                <div className='list'>
+            <Panel>
+                <Menu />
+                <List>
                     {
                         items.map((item, i) => {
-                            return <div key={item.id} className='memo'>
-                                <div>
-                                    {item.title === '' ? '[No title]' : item.title.substring(0,20)}
-                                </div>
-                                <div>
-                                    <button className='pinButton'>
-                                        {item.pinned ? 'Pinned': 'Pin'}
-                                    </button>
-                                </div>
-                            </div>
+                            return <Memo key={item.id} item={item} />
                         })
                     }
-                </div>
-            </div>
+                </List>
+            </Panel>
 
-            <div>
-                <div className='editor'></div>
-                <div className='preview'></div>
-            </div>
+            <>
+                <Editor />
+                <Preview />
+            </>
         </div>
     );
 }
