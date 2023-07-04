@@ -62,7 +62,7 @@
 }
 
 .pinButton {
-    background-color: #53B8BB;
+    background-color: #003638;
     border: none;
     border-radius: 3px;
     padding: 5px;
@@ -71,7 +71,7 @@
 }
 
 .pinButton:hover {
-    background-color: #44989B;
+    background-color: #002627;
 }
   
 .activeNote {

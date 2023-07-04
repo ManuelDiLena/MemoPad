@@ -7,7 +7,7 @@ function App() {
         id: 0,
         title: 'Primer nota',
         text: '# HolaMundo',
-        pinned: false,
+        pinned: true,
         created: Date.now()
     }]);
 
@@ -33,7 +33,16 @@ function App() {
                 <div className='list'>
                     {
                         items.map((item, i) => {
-                            return <div key={item.id} className='memo'>{item.title}</div>
+                            return <div key={item.id} className='memo'>
+                                <div>
+                                    {item.title === '' ? '[No title]' : item.title.substring(0,20)}
+                                </div>
+                                <div>
+                                    <button className='pinButton'>
+                                        {item.pinned ? 'Pinned': 'Pin'}
+                                    </button>
+                                </div>
+                            </div>
                         })
                     }
                 </div>
