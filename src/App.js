@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import uuid from 'react-uuid';
 import Panel from './components/Panel';
@@ -7,6 +7,7 @@ import List from './components/List';
 import Memo from './components/Memo';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
+import ItemsContext from './items-context';
 
 function App() {
 
@@ -127,7 +128,9 @@ function App() {
     return (
         <div className="App container">
             <Panel>
-                <Menu onNew={handleNew} onSearch={handleSearch}/>
+                <ItemsContext.Provider value={{onSearch:handleSearch, onNew:handleNew}}>
+                    <Menu />
+                </ItemsContext.Provider>
                 <List>
                     {
                         copyItems.map((item, i) => {

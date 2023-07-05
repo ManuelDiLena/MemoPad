@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ItemsContext from '../items-context';
 
-export default function Menu({onNew, onSearch}) {
+export default function Menu() {
+
+    const itemsContext = useContext(ItemsContext);
 
     function handleClick() {
-        onNew()
+        //onNew()
+        itemsContext.onNew();
     }
 
     function handleChange(e) {
-        onSearch(e)
+        //onSearch(e)
+        itemsContext.onSearch(e);
     }
 
     return (
