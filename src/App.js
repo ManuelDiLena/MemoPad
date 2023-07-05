@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import uuid from 'react-uuid';
 import Panel from './components/Panel';
 import Menu from './components/Menu';
 import List from './components/List';
@@ -9,19 +10,13 @@ import Preview from './components/Preview';
 
 function App() {
 
-    const [items, setItems] = useState([{
-        id: 0,
-        title: 'Primer nota',
-        text: '# HolaMundo',
-        pinned: true,
-        created: Date.now()
-    }]);
+    const [items, setItems] = useState([]);
 
-    function handleClick() {
+    function handleNew() {
         const memo = {
-            id: 1,
-            title: 'Segunda nota',
-            text: '# HolaMundo',
+            id: uuid(),
+            title: '',
+            text: '',
             pinned: false,
             created: Date.now()
         }
@@ -32,7 +27,7 @@ function App() {
     return (
         <div className="App container">
             <Panel>
-                <Menu />
+                <Menu onNew={handleNew}/>
                 <List>
                     {
                         items.map((item, i) => {
