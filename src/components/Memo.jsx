@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Memo({item, onHandlePinned, onHandleSelectNote, index, actualIndex}) {
+export default function Memo({item, onHandlePinned, onHandleSelectMemo, index, actualIndex}) {
 
     function handlePinned(item, index) {
         onHandlePinned(item, index)
     }
 
     function handleClick(item, e) {
-        onHandleSelectNote(item, e)
+        onHandleSelectMemo(item, e)
     }
 
     return (
