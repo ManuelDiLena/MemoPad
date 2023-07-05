@@ -74,8 +74,9 @@
     background-color: #002627;
 }
   
-.activeNote {
+.activeMemo {
     background-color: #003638;
+    border-radius: 3px;
 }
   
 .editor-textarea {
