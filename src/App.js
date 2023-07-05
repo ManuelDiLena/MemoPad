@@ -18,8 +18,8 @@ function App() {
     function handleNew() {
         const memo = {
             id: uuid(),
-            title: '',
-            text: '',
+            title: 'Hola',
+            text: 'Hola',
             pinned: false,
             created: Date.now()
         }
@@ -30,8 +30,7 @@ function App() {
     function handlePinned() {
 
     }
-
-    
+ 
     // Function to select a memo from the left panel
     function handleSelectNote(item, e) {
         if(e.target.classList.contains('memo')) return
@@ -39,12 +38,27 @@ function App() {
         setActualIndex(index)
     }
 
+    // Functions to be able to edit the title and text of the memo in the editor
+    function onChangeTitle(e) {
+        const title = e.target.value
+        let memos = [...items]
+        memos[actualIndex].title = title
+        setItems(memos)
+    }
+
+    function onChangeText(e) {
+        const text = e.target.value
+        let memos = [...items]
+        memos[actualIndex].text = text
+        setItems(memos)
+    }
+
     // Function to display a selected memo in the editor
     function renderEditorUI() {
         return (
             <>
-            <Editor item={items[actualIndex]}/>
-            <Preview text={items[actualIndex].text} />
+            <Editor item={items[actualIndex]} onChangeTitle={onChangeTitle} onChangeText={onChangeText}/>
+            <Preview text={items[actualIndex].text}/>
             </>
         );
     }
