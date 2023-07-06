@@ -1,3 +1,7 @@
+# MemoPad - Visit the app [here!](https://manueldilena.github.io/MemoPad/)
+
+For the MemoPad app to work, a NodeJS server must be initialized.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
