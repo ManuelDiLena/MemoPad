@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MemoPad/static/css/main.c5731664.css",
+    "main.js": "/MemoPad/static/js/main.6688d2a4.js",
+    "index.html": "/MemoPad/index.html",
+    "main.c5731664.css.map": "/MemoPad/static/css/main.c5731664.css.map",
+    "main.6688d2a4.js.map": "/MemoPad/static/js/main.6688d2a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5731664.css",
+    "static/js/main.6688d2a4.js"
+  ]
+}
